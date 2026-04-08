@@ -60,9 +60,9 @@ chatForm.addEventListener("submit", (e) => {
       // Add the Worker's response to the conversation history
       messages.push({ role: "assistant", content: replyText });
 
-      // Display the response on the page
-      
-      chatWindow.textContent = replyText;
+      // Display the response on the page with bold speaker labels
+      chatWindow.innerHTML =
+        "<strong>You:</strong> " + userInput.value + "<br><br><strong>L'Oreal Bot:</strong> " + replyText;
     } catch (error) {
       console.error("Error:", error); // Log the error
       chatWindow.textContent =
